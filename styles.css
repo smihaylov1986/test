@@ -8,121 +8,27 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#container {
-  height: 725px;
-  width: 360px;
-  margin: 100px auto;
-  background: #f7f7f7;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
+svg {
+  height : 200px;
 }
-
-h1 {
-  background: #1F030C;
-  color: white;
-  margin: 0;
-  padding: 10px 100px;
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: normal;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+ #heart {
+  filter:url(#shadowFilter)
+} 
+#heart:hover {
+    cursor : pointer;
+  transform-origin : 50% 50%;
+    filter:url(#beatingHeartFilter);
 }
-
-p {
-  padding-left: 20px;
+#heart1:hover {
+  cursor : pointer;
+  transform-origin : 50% 50%;
+    filter:url(#distortionFilter);
 }
-
-form input[type="text"] {
-  width=90px;
+#heart2 {
+  filter : url(#shadowFilter);
 }
-
-input {
-  padding-left: 20px;
-}
-
-#billamt {
-  font-size: 14px;
-  /*color: #2980b9;*/
-  color: #red;
-  background-color: #f7f7f7;
-  width: 60%;
-  padding: 5px 5px 8px 8px;
-}
-
-#billamt:focus {
-  background: #fff;
-  border: 3px solid #2980b9;
-  outline: none;
-}
-
-#peopleamt {
-  width: 60%;
-  padding: 5px 5px 8px 8px;
-  margin-left: 20px;
-  color: #red;
-  background-color: #f7f7f7;
-  font-size: 14px;
-}
-
-.dollarSign {
-  display: inline;
-}
-
-#serviceQual {
-  padding: 13px 13px 20px 20px;
-  margin-left: 20px;
-  font-size: 25px;
-}
-
-button {
-  text-transform: uppercase;
-  font-weight: bold;
-  display: block;
-  margin: 30px auto;
-  background: #AD133A;
-  border-radius: 5px;
-  width: 200px;
-  height: 50px;
-  font-size: 17px;
-  color: white;
-}
-
-button:hover {
-  background: #4c2827;
-  border-bottom-color: #111;
-}
-
-button:active {
-  position: relative;
-  top: 1px;
-}
-
-#totalAndTip {
-  font-size: 30px;
-  margin-top: 5px;
-  text-align: center;
-}
-
-.totalAndTipTextStyle {
-  font-size: 20px;
-  font-weight: bold;
-  display: block;
-  text-transform: uppercase;
-}
-
-#totalAndTip sup {
-  font-size: 20px;
-  top: -18px;
-}
-
-#totalAndTip small {
-  font-size: 20px;
-  font-weight: bold;
-  display: block;
-}
-#totalAmountText {
-  padding-top: 20px;
+#heart2:hover { 
+   cursor : pointer;
+/*   transform-origin : 50% 50%; */
+    filter:url(#fancyFilter);
 }
