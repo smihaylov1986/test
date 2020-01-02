@@ -4,37 +4,78 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <div id="container">
-      <h1>Tip Calculator</h1>
-      <div id="calculator">
-        <form>
-          <p>How much was your bill?</p>
-          <p>$ <input id="billamt" type="text" placeholder="Bill Amount" /></p>
+    <svg viewBox="0 0 100 100">
+  <defs>
+     <filter id="beatingHeartFilter" width="150%" height="150%">
+     <feOffset result="offOut1" in="SourceAlpha" dx="3" dy="6" />
+        <feGaussianBlur result="blurOut1" in="offOut1" stdDeviation="4"/>
+       <feBlend in='SourceGraphic' in2='blurOut1'  mode="normal" /> 
+       
+	<feTurbulence type="fractalNoise" baseFrequency="0.000114 0.000819" numOctaves="3" seed="56" stitchTiles="stitch" x="0%" y="0%" width="150%" height="150%" result="turbulence"/>
+      <feColorMatrix in="turbulence" type="hueRotate" values="0" result="cloud">
+    <animate attributeName="values" from="20" to="285" dur="0.4s" 
+      repeatCount="indefinite"/>
+  </feColorMatrix>
+	<feDisplacementMap in="SourceGraphic" in2="cloud" scale="15" xChannelSelector="R" yChannelSelector="R" x="0%" y="0%" width="100%" height="100%" result="displacementMap"/>
+     <feMerge> 
+     <feMergeNode in="blurOut1"/> =
+        <feMergeNode in="displacementMap"/>
+      </feMerge>
+    </filter>
+     <filter id="distortionFilter" width="150%" height="150%">
+     <feOffset result="offOut1" in="SourceAlpha" dx="3" dy="6" />
+        <feGaussianBlur result="blurOut1" in="offOut1" stdDeviation="4"/>
+       <feBlend in='SourceGraphic' in2='blurOut1'  mode="normal" /> 
+       
+	<feTurbulence type="fractalNoise" baseFrequency="0.333 0.123" numOctaves="3" seed="522" stitchTiles="noStitch" x="0%" y="0%" width="150%" height="150%" result="turbulence"/>
+      <feColorMatrix in="turbulence" type="hueRotate" values="0" result="cloud">
+    <animate attributeName="values" from="0" to="360" dur="0.4s" 
+      repeatCount="indefinite"/>
+  </feColorMatrix>
+	<feDisplacementMap in="SourceGraphic" in2="cloud" scale="15" xChannelSelector="R" yChannelSelector="R" x="0%" y="0%" width="100%" height="100%" result="displacementMap"/>
+     <feMerge> 
+     <feMergeNode in="blurOut1"/> =
+        <feMergeNode in="displacementMap"/>
+      </feMerge>
+    </filter>
+    <filter id="fancyFilter" width="150%" height="150%">
+     <feOffset result="offOut1" in="SourceAlpha" dx="3" dy="6" />
+        <feGaussianBlur result="blurOut1" in="offOut1" stdDeviation="4"/>
+       <feBlend in='SourceGraphic' in2='blurOut1'  mode="normal" /> 
+       
+	<feTurbulence type="fractalNoise" baseFrequency="0.000203 0.53" numOctaves="7" seed="342" stitchTiles="noStitch" x="0%" y="0%" width="150%" height="150%" result="turbulence"/>
+      <feColorMatrix in="turbulence" type="hueRotate" values="0" result="cloud">
+    <animate attributeName="values" from="360" to="0" dur="2s" 
+      repeatCount="indefinite"/>
+  </feColorMatrix>
+	<feDisplacementMap in="SourceGraphic" in2="cloud" scale="15" xChannelSelector="R" yChannelSelector="R" x="0%" y="0%" width="100%" height="100%" result="displacementMap"/>
+     <feMerge> 
+     <feMergeNode in="blurOut1"/> =
+        <feMergeNode in="displacementMap"/>
+      </feMerge>
+    </filter>
+    <filter id="shadowFilter" width="150%" height="150%">
+        <feOffset result="offOut1" in="SourceAlpha" dx="3" dy="3" />
+        <feGaussianBlur result="blurOut1" in="offOut1" stdDeviation="2"/>
+       <feBlend in='SourceGraphic' in2='blurOut1'  mode="normal" /> 
+    </filter>
+  </defs>
+    
+        <path id="heart" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 "
+ fill='rgba(255,10,10,0.8)' />              
+        
+    
+    </svg>
+<svg viewBox="0 0 100 100"> 
+ <path id="heart1" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 "
+ fill='rgba(255,10,10,0.8)' />     
+</svg>
 
-          <p>How was your service?</p>
-          <p>
-            <select id="serviceQual">
-              <option disabled selected value="0">-- Choose an Option --</option>
-              <option value="0.3">30&#37; &#45; Outstanding</option>
-              <option value="0.2">20&#37; &#45; Good</option>
-              <option value="0.15">15&#37; &#45; It was OK</option>
-              <option value="0.1">10&#37; &#45; Bad</option>
-              <option value="0.05">5&#37; &#45; Terrible</option>
-            </select>
-          </p>
-        </form>
+<svg viewBox="0 0 100 100"> 
+ <path id="heart2" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 "
+ fill='rgba(255,10,10,0.8)' />     
+</svg>
 
-        <p>How many people are sharing the bill?</p>
-        <input id="peopleamt" type="text" placeholder="Number of People" /> people
-        <button type="button" id="calculate" onclick="calculateTip()">Calculate!</button>
-      </div>
-      <!--calculator end-->
-      <div id="totalAndTip">
-
-      </div>
-      <!--totalTip end-->
-    </div>
-    <!--container end-->
   </body>
 </html>
 <script type="text/javascript" src="calculator.js"></script>
