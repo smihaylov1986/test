@@ -29,6 +29,5 @@ body svg #heart2 {
 }
 body svg #heart2:hover { 
    cursor : pointer;
-/*   transform-origin : 50% 50%; */
     filter:url(#fancyFilter);
 }
